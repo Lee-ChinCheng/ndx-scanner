@@ -1,0 +1,43 @@
+{
+  "llm": {
+    "model": "anthropic/claude-sonnet-5.5",
+    "fallback_model": "anthropic/claude-haiku-5.5",
+    "temperature": 0.2,
+    "max_tokens": 8000,
+    "reasoning_effort": "low",
+    "timeout_sec": 180
+  },
+  "report": {
+    "title": "Nasdaq-100 築底訊號掃描報告",
+    "filename_prefix": "nasdaq_",
+    "chart_days": 120
+  },
+  "fetch": {
+    "breadth_threads": 4,
+    "breadth_pause_sec": 0.15,
+    "pcr_backfill_days": 60,
+    "constituents_cache_days": 7,
+    "http_timeout_sec": 30
+  },
+  "history_days_for_llm": 15,
+  "ftd": {
+    "enabled": true,
+    "min_correction_pct": 3.0,
+    "high_lookback_days": 40,
+    "min_down_days": 3,
+    "ftd_day_start": 4,
+    "ftd_day_end": 10,
+    "ftd_min_gain_pct": 1.25,
+    "dual_window_days": 5,
+    "max_signal_age_days": 60
+  },
+  "notify": {
+    "enabled": true,
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 465,
+    "recipients": [],
+    "sender_name": "Nasdaq Scanner",
+    "timeout_sec": 60,
+    "retries": 3
+  }
+}
